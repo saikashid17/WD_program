@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>XML Assignments</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #1d4350, #a43931);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .assignment-list-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      width: 100%;
+      max-width: 1000px;
+      margin-top: 20px;
+    }
+
+    .assignment-box {
+      background: linear-gradient(145deg, #b24592, #f15f79);
+      color: white;
+      border-radius: 15px;
+      padding: 25px 20px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 600;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .assignment-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.05);
+      transform: skewX(-25deg) translateX(-100%);
+      transition: 0.5s;
+    }
+
+    .assignment-box:hover::before {
+      transform: skewX(-25deg) translateX(100%);
+    }
+
+    .assignment-box:hover {
+      transform: scale(1.05);
+    }
+
+    .assignment-box a {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .assignment-box i {
+      font-size: 26px;
+      color: #fff;
+    }
+
+ 
+  </style>
+</head>
+<body>
+
+  <h1>XML Assignments</h1>
+
+  <div class="assignment-list-container">
+    <div class="assignment-box"><a href="employees.xml"><i class="fa-solid fa-code"></i> Employee</a></div>
+    <div class="assignment-box"><a href="library.xml"><i class="fa-solid fa-code"></i> Library</a></div>
+    <div class="assignment-box"><a href="students.xml"><i class="fa-solid fa-code"></i> Students</a></div>
+    <div class="assignment-box"><a href="Books.xml"><i class="fa-solid fa-code"></i> Books</a></div>
+    
+  </div>
+
+ 
+
+</body>
+</html>
