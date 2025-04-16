@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web Development</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      background-color: #1f3b4d;
+      color: #ffffff;
+      padding: 20px 40px;
+      border-radius: 12px;
+      font-size: 42px;
+      margin: 40px 0 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    h2 {
+      color: #dcdcdc;
+      font-size: 20px;
+      margin: 5px 0;
+    }
+
+    .assignment-list-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 90%;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .assignment-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      color: #ffffff;
+      padding: 20px 30px;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-size: 22px;
+      font-weight: 600;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .assignment-box:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: scale(1.03);
+    }
+
+    .assignment-box a {
+      color: inherit;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .assignment-box i {
+      font-size: 28px;
+      margin-right: 20px;
+    }
+
+ 
+  </style>
+</head>
+<body>
+
+  <h1>Web Development</h1>
+  <h2>Name: Sai Subhash Kashid</h2>
+  <h2>Roll No.: 17</h2>
+
+  <div class="assignment-list-container">
+    <div class="assignment-box">
+      <a href="Html/html_index.html">
+        <i class="fa-brands fa-html5" style="color:#e44d26;"></i> HTML Assignment
+      </a>
+    </div>
+    <div class="assignment-box">
+      <a href="Html_with_CSS/CSS_index.html">
+        <i class="fa-brands fa-css3-alt" style="color:#2965f1;"></i> CSS Assignment
+      </a>
+    </div>
+    <div class="assignment-box">
+      <a href="XML/XML_index.html">
+        <i class="fa-solid fa-code" style="color:#f39c12;"></i> XML Assignment
+      </a>
+    </div>
+  </div>
+
+ 
+
+</body>
+</html>
+
