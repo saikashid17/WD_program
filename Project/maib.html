@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Explore India</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset and Basics */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navbar */
+    nav {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px 30px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 2rem;
+      color: #ffcc00;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ffcc00;
+    }
+
+    /* Header */
+    header {
+      background: url('india.jpg') center center/cover no-repeat;
+      background-attachment: fixed;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+    }
+    header h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 4rem;
+      animation: fadeInDown 1s ease-out;
+    }
+    header p {
+      font-size: 1.5rem;
+      margin-top: 10px;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .about, .regions, .zone {
+      background: #fff;
+    }
+    .about h2, .regions h2, .zone h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .about p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: auto;
+      color: #555;
+    }
+
+    /* Region cards */
+    .region-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .region {
+      background: white;
+      padding: 20px;
+      width: 250px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .region:hover {
+      transform: scale(1.05);
+    }
+    .region:nth-child(1) { background: linear-gradient(135deg, #e0f7fa, #b2ebf2); }
+    .region:nth-child(2) { background: linear-gradient(135deg, #f1f8e9, #dcedc8); }
+    .region:nth-child(3) { background: linear-gradient(135deg, #fff8e1, #ffecb3); }
+    .region:nth-child(4) { background: linear-gradient(135deg, #fce4ec, #f8bbd0); }
+    .region h3 {
+      margin-bottom: 10px;
+    }
+
+    /* Cards inside Zones */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      width: 260px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card h3 {
+      margin: 15px 0 5px;
+      font-size: 1.2rem;
+    }
+    .card p {
+      padding: 0 15px 20px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* Top Button */
+    .top-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #ff7043;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .top-btn:hover {
+      background: #e64a19;
+      transform: scale(1.2);
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+  <div class="logo">Explore India</div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#north">North</a></li>
+    <li><a href="#south">South</a></li>
+    <li><a href="#east">East</a></li>
+    <li><a href="#west">West</a></li>
+  </ul>
+</nav>
+
+<!-- Header/Home -->
+<header id="home">
+  <h1>Explore India 🌏</h1>
+  <p>Discover the beauty, culture, and history of Incredible India</p>
+</header>
+
+<!-- About Section -->
+<section id="about" class="about">
+  <h2>About India</h2>
+  <p>India, a land of vibrant culture, ancient traditions, and breathtaking landscapes, offers a mesmerizing journey from the snowy Himalayas in the north to the sun-drenched beaches in the south. Experience its festivals, flavors, spirituality, and diversity like nowhere else!</p>
+</section>
+<!-- About Video Section -->
+<section class="video-section">
+  <h2>India Tourism Overview</h2>
+  <div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/35npVaFGHMY" 
+      title="India Tourism Video" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+<!-- Regions -->
+<section class="regions">
+  <h2>Regions of India</h2>
+ 
+  <div class="region-cards">
+    <a href="#north" class="region">
+      <h3>🏔️ North India</h3>
+      <p>Majestic mountains, Mughal monuments, colorful palaces, and holy rivers await you.</p>
+    </a>
+    <a href="#south" class="region">
+      <h3>🏖️ South India</h3>
+      <p>Serene backwaters, lush greenery, ancient temples, and beautiful beaches.</p>
+    </a>
+    <a href="#east" class="region">
+      <h3>🌄 East India</h3>
+      <p>Mystical monasteries, rich tribal culture, tea gardens, and literary heritage.</p>
+    </a>
+    <a href="#west" class="region">
+      <h3>🏜️ West India</h3>
+      <p>Golden deserts, vibrant cities, royal forts, and stunning coastline adventures.</p>
+    </a>
+  </div>
+</section>
+
+<!-- North India -->
+<section id="north" class="zone">
+  <h2>North India</h2>
+ <div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/GE9c3uijLz0" 
+      title="North India Tourism Video" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div class="card-container">
+    <div class="card"><a href="https://agratourism.in/places-to-visit-in-agra" target="_blank" class="card"><img src="taj.png" alt="Agra"><h3>Agra</h3><p>Home of the Taj Mahal, a masterpiece of Mughal architecture.</p></a></div>
+    <div class="card"><a href="https://www.incredibleindia.gov.in/en/himachal-pradesh/manali"target="_blank" class="card"><img src="manali.png" alt="Manali"><h3>Manali</h3><p>Snowy peaks, adventure sports, and scenic landscapes.</p></a></div>
+    <div class="card"><a href="https://www.tourism.rajasthan.gov.in/jaipur.html" target="_blank" class="card"><img src="jaipur.png" alt="Jaipur"><h3>Jaipur</h3><p>The Pink City with majestic forts and colorful bazaars.</p></a></div>
+    <div class="card"><a href="https://www.incredibleindia.gov.in/en/himachal-pradesh/shimla" target="_blank" class="card"><img src="shimla.png" alt="Shimla"><h3>Shimla</h3><p>Charming hill station with colonial architecture.</p></a></div>
+  </div>
+</section>
+
+<!-- South India -->
+<section id="south" class="zone">
+  <h2>South India</h2>
+  <div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/CYu6YlpLawQ" 
+      title="South India Tourism Video" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div class="card-container">
+    <div class="card"><a href="https://www.keralatourism.org/" target="_blank" class="card"><img src="kerala.png" alt="Kerala"><h3>Kerala</h3><p>Backwaters, beaches, and lush green landscapes.</p></a></div>
+    <div class="card"><a href="https://maduraitourism.co.in/" target="_blank" class="card"><img src="madurai.png" alt="Madurai"><h3>Madurai</h3><p>Ancient temples and vibrant culture.</p></a></div>
+    <div class="card"><a href="https://www.mysoretourism.org.in/" target="_blank" class="card"><img src="mysore.png" alt="Mysore"><h3>Mysore</h3><p>Famous for its royal heritage and the majestic Mysore Palace.</p></a></div>
+    <div class="card"><a href="https://karnatakatourism.org/tour-item/hampi/" target="_blank" class="card"><img src="hampi.png" alt="Hampi"><h3>Hampi</h3><p>Ancient ruins from the Vijayanagara Empire.</p></a></div>
+  </div>
+</section>
+
+<!-- East India -->
+<section id="east" class="zone">
+    <h2>East India</h2>
+<div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Da5eDftu4ow" 
+      title="East India Tourism Video" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="card-container">
+    <div class="card"> 
+      <a href="https://www.google.com/search?q=Kolkata" target="_blank" class="card"><img src="kolkata.png" alt="Kolkata"><h3>Kolkata</h3><p>The cultural capital with colonial charm and literary spirit.</p></a></div>
+    <div class="card"> <a href="https://www.google.com/search?q=Darjeeling" target="_blank" class="card"><img src="Darjeeling.png" alt="Darjeeling"><h3>Darjeeling</h3><p>Famous for tea gardens and Himalayan views.</p></a></div>
+    <div class="card"><a href="https://odishatourism.gov.in/content/tourism/en/discover/major-cities/bhubaneswar.html" target="_blank" class="card"><img src="Bhubaneswar.png" alt="Bhubaneswar"><h3>Bhubaneswar</h3><p>City of temples and ancient architecture.</p></a></div>
+    <div class="card"><a href="https://www.meghalayatourism.in/destinations/shillong/" target="_blank" class="card"><img src="Shillong.png" alt="Shillong"><h3>Shillong</h3><p>The Scotland of the East with waterfalls and hills.</p></a></div>
+  </div>
+</section>
+
+<!-- West India -->
+<section id="west" class="zone">
+  <h2>West India</h2>
+ <div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/rwGEZg6bBQk" 
+      title="West India Tourism Video" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div class="card-container">
+    <div class="card"><a href="https://www.tourism.rajasthan.gov.in/udaipur.html" target="_blank" class="card"><img src="Udaipur.png" alt="Udaipur"><h3>Udaipur</h3><p>The romantic Lake City of Rajasthan.</p></a></div>
+    <div class="card"><a href="https://goa-tourism.com/" target="_blank" class="card"><img src="Goa.png" alt="Goa"><h3>Goa</h3><p>Sun-kissed beaches and vibrant nightlife.</p></a></div>
+    <div class="card"><a href="https://maharashtratourism.gov.in/districts/mumbai-city/" target="_blank" class="card"><img src="Mumbai.png" alt="Mumbai"><h3>Mumbai</h3><p>City of dreams, Bollywood, and colonial buildings.</p></a></div>
+    <div class="card"><a href="https://www.tourism.rajasthan.gov.in/content/rajasthan-tourism/en/tourist-destinations/mount-abu.html" target="_blank" class="card"><img src="Mount Abu.png" alt="Mount Abu"><h3>Mount Abu</h3><p>Only hill station of Rajasthan surrounded by forests.</p></a></div>
+  </div>
+</section>
+
+<!-- Top Button -->
+<a href="#" class="top-btn">⬆</a>
+
+
+
+</body>
+</html>
+
+
+
